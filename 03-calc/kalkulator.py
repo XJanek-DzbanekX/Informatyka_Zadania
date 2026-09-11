@@ -11,7 +11,7 @@ def wczytywanie(nazwy : list[str]) -> dict[str, float]:
 
 
 #pytamy użytkownika co chce liczyc najpierw czy w 3d czy plaskie a potem czy pc czy ob/V
-wybor = int(input("figury plaskie -> 1, figury 3d -> 2   =   "))              
+wybor = int(input("figury plaskie -> 1, figury 3d -> 2, inne -> 3   =   "))              
 if wybor == 1:
     wybor = int(input("pole calkowite -> 1, obwod -> 2   =   "))
     if wybor == 1:
@@ -73,14 +73,75 @@ if wybor == 1:
             print(f"ob rombu = {wymiary["a"] * 4}")
         else:
             print("nie ma takiej komendy...")
-
-
-
-
-
-
-
-
+    else:
+        print("nie ma takiej komendy...")
+elif wybor == 2:
+    wybor = int(input("pola calkowite -> 1, objetosci -> 2   =   "))
+    if wybor == 1:
+        wybor = int(input("szescian -> 1, prostopadloscian -> 2, graniastoslub -> 3, ostorslup - > 4, walec -> 5, stozek -> 6, kula -> 7   =   "))
+        if wybor == 1:
+            wymiary = wczytywanie(["a"])
+            print(f"pc szescianu = {(wymiary["a"] ** 2) * 6}")
+        elif wybor == 2:
+            wymiary = wczytywanie(["a", "b", "c"])
+            print(f"pc prostopadloscianu = {(wymiary["a"] * wymiary["b"]) * 2 + (wymiary["a"] * wymiary["c"]) * 2 + (wymiary["b"] * wymiary["c"]) * 2}")
+        elif wybor == 3:
+            wymiary = wczytywanie(["pp", "pb"])
+            print(f"pc graniastoslupa = {wymiary["pp"] * 2 + wymiary["pb"]}")
+        elif wybor == 4:
+            wymiary = wczytywanie(["pp", "pb"])
+            print(f"pc ostroslupa = {wymiary["pp"] + wymiary["pb"]}")
+        elif wybor == 5:
+            wymiary = wczytywanie(["r", "H"])
+            print(f"pc walca = {(wymiary["r"] ** 2 * pi) * 2 +(wymiary["r"] * 2 * pi) * wymiary["H"]}")
+        elif wybor == 6:
+            wymiary = wczytywanie(["r", "l"])
+            print(f"pc stozka = {(wymiary["r"] ** 2 * pi) + (wymiary["r"] * wymiary["l"] * pi)}")
+        elif wybor == 7:
+            wymiary = wczytywanie(["r"])
+            print(f"pc kuli = {(wymiary["r"] ** 2) * pi * 4}")
+        else:
+            print("nie ma takiej komendy...")
+    elif wybor == 2:
+        wybor = int(input("szescian -> 1, prostopadloscian -> 2, graniastoslub -> 3, ostorslup - > 4, walec -> 5, stozek -> 6, kula -> 7   =   "))
+        if wybor == 1:
+            wymiary = wczytywanie(["a"])
+            print(f"V szescianu = {wymiary["a"] ** 3}")
+        elif wybor == 2:
+            wymiary = wczytywanie(["a", "b", "c"])
+            print(f"V prostopadloscianu = {wymiary["a"] * wymiary["b"] * wymiary["c"]}")
+        elif wybor == 3:
+            wymiary = wczytywanie(["pp", "H"])
+            print(f"V graniastoslupa = {wymiary["pp"] * wymiary["H"]}")
+        elif wybor == 4:
+            wymiary = wczytywanie(["pp", "H"])
+            print(f"V ostroslupa = {(wymiary["pp"] * wymiary["H"]) / 3}")
+        elif wybor == 5:
+            wymiary = wczytywanie(["r", "H"])
+            print(f"V walca = {wymiary["r"] ** 2 * pi * wymiary["H"]}")
+        elif wybor == 6:
+            wymiary = wczytywanie(["r", "H"])
+            print(f"V stozka = {(wymiary["r"] ** 2 * pi * wymiary["H"]) / 3}")
+        elif wybor == 7:
+            wymiary = wczytywanie(["r"])
+            print(f"V kuli = {(wymiary["r"] ** 3 * pi) * (4 / 3)}")
+        else:
+            print("nie ma takiej komendy...")
+elif wybor == 3:
+    wybor = int(input("h trojkata rownobocznego - > 1, przekatna kwadratu -> 2 twierdzenie pitagorasa -> 3   =   "))
+    if wybor == 1:
+        wymiary = wczytywanie(["a"])
+        print(f"h = {(wymiary["a"] * sqrt(3)) / 2}")
+    elif wybor == 2:
+        wymiary = wczytywanie(["a"])
+        print(f"przekatna = {wymiary["a"] * sqrt(2)}")
+    elif wybor == 3:
+        wymiary = wczytywanie(["a", "b"])
+        print(f"c = {sqrt(wymiary["a"] ** 2 + wymiary["b"] ** 2)}")
+    else:
+        print("nie ma takiej komendy...")
+else:
+    print("nie ma takiej komendy...")
 
 
 
@@ -106,4 +167,4 @@ if wybor == 1:
 
 
 # wymiary = wczytywanie(["a", "b"])
-# print(wymiary["a"] * wymiary["b"])
+    # print(wymiary["a"] * wymiary["b"])
