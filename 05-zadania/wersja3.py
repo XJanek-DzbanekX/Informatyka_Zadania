@@ -45,10 +45,15 @@
 # print(f"reszta z dzielenia = {k % m}")
 
 #---------- 6 ile razy k dzieli sie przez m----------
-k = int(input("podaj liczbe którą chcesz podzielic = "))
-m = int(input("podaj liczbe przez którą chcesz dzielic = "))
+# k = int(input("podaj liczbe którą chcesz podzielic = "))
+# m = int(input("podaj liczbe przez którą chcesz dzielic = "))
 
-if m > k:
-    print(0, "nie da sie")
-else:
-    print(k // m)
+# if m > k:
+#     print(0, "nie da sie")
+# else:
+#     print(k // m)
+
+
+
+
+
