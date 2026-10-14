@@ -47,11 +47,11 @@ from random import randint
 odcinek = int(input("długosc odcinka = "))
 odcinki = []
 
-for i in range(3):
-    if odcinek <= 0:
-        print("oj za za duzo ucialem wiec mamy tylko", len(odcinki))
-    else:
-        losowa_dlugosc = randint(1, odcinek)
+losowa_dlugosc = randint(1, odcinek - 2)
         odcinki.append(losowa_dlugosc)
         odcinek -= losowa_dlugosc
+losowa_dlugosc = randint(1, odcinek - 1)
+odcinki.append(losowa_dlugosc)
+odcinek -= losowa_dlugosc
+odcinki.append(odcinek)
 print(f"odcinki = {odcinki}")
